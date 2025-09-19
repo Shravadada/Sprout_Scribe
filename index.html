@@ -6,28 +6,28 @@
   <title>SproutScribe – Biodegradable Pen</title>
   <meta name="description" content="SproutScribe: a biodegradable pen that can sprout into a plant. Stories today, a greener tomorrow." />
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <style>
-    :root { --brand:#16a34a; --ink:#0f172a; }
-    html { scroll-behavior: smooth; }
-    .page { display:none; opacity:0; transform:translateY(8px); transition:opacity .25s ease, transform .25s ease; }
-    .page.active { display:block; opacity:1; transform:translateY(0); }
-    .card { transition:transform .2s ease, box-shadow .2s ease; }
-    .card:hover { transform:translateY(-3px); box-shadow:0 12px 30px rgba(2,6,23,.08); }
-    .nav-link { padding:.5rem .9rem; border-radius:999px; }
-    .nav-link.active { background:rgba(22,163,74,.12); color:#065f46; }
-    .iframe-wrap { position:relative; width:100%; max-width:900px; margin-inline:auto; }
-    .iframe-wrap iframe { width:100%; border:0; }
+    :root { --brand:#16a34a; }
+    html { scroll-behavior:smooth; }
+    /* Tabbed pages */
+    .page{display:none;opacity:0;transform:translateY(8px);transition:opacity .25s,transform .25s}
+    .page.active{display:block;opacity:1;transform:translateY(0)}
+    .nav-link{padding:.5rem .9rem;border-radius:9999px}
+    .nav-link.active{background:rgba(22,163,74,.12);color:#065f46}
+    .card{transition:transform .2s,box-shadow .2s}
+    .card:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(2,6,23,.08)}
+    .iframe-wrap{position:relative;width:100%;max-width:900px;margin-inline:auto}
+    .iframe-wrap iframe{width:100%;border:0}
   </style>
 </head>
 <body class="bg-white text-slate-800">
 
-  <!-- Top Nav -->
+  <!-- NAV -->
   <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
       <a href="#home" class="flex items-center gap-2 font-extrabold text-xl text-slate-900">
-        <span class="inline-block w-7 h-7 rounded-full bg-[--brand]"></span>
-        SproutScribe
+        <span class="inline-block w-7 h-7 rounded-full bg-[--brand]"></span> SproutScribe
       </a>
       <nav class="hidden md:block">
         <ul class="flex flex-wrap gap-2">
@@ -42,7 +42,6 @@
       </nav>
       <button id="menuBtn" class="md:hidden px-3 py-2 border rounded-lg">Menu</button>
     </div>
-    <!-- Mobile nav -->
     <nav id="mobileNav" class="hidden md:hidden border-t border-slate-200">
       <ul class="px-4 py-3 grid gap-2">
         <li><a class="nav-link" href="#about">About</a></li>
@@ -56,14 +55,12 @@
     </nav>
   </header>
 
-  <!-- HOME / HERO -->
+  <!-- HERO -->
   <main class="max-w-7xl mx-auto px-4">
     <section id="home" class="py-10">
       <div class="grid md:grid-cols-2 gap-8 items-center">
         <div>
-          <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight">
-            The Future of Writing is Green
-          </h1>
+          <h1 class="text-4xl md:text-5xl font-extrabold leading-tight text-slate-900">The Future of Writing is Green</h1>
           <p class="mt-3 text-lg text-slate-700">
             SproutScribe is a biodegradable pen that can be planted to sprout into new life —
             <span class="font-semibold text-emerald-700">stories today, a greener tomorrow.</span>
@@ -74,9 +71,7 @@
           </div>
         </div>
         <div class="relative">
-          <!-- Hero sketch (your file) -->
-          <img src="WhatsApp Image 2025-05-16 at 18.36.00 (1).jpeg" 
-               alt="SproutScribe sketch" 
+          <img src="WhatsApp Image 2025-05-16 at 18.36.00 (1).jpeg" alt="SproutScribe sketch"
                class="rounded-xl shadow-xl w-full object-cover" />
         </div>
       </div>
@@ -93,9 +88,7 @@
             <p class="text-emerald-700 font-semibold">Tagline: “stories today, a greener tomorrow.”</p>
           </div>
           <div>
-            <!-- Group/mentor photo (your file) -->
-            <img src="WhatsApp Image 2025-09-17 at 16.00.23.jpeg" 
-                 alt="Team with mentor holding prototypes"
+            <img src="WhatsApp Image 2025-09-17 at 16.00.23.jpeg" alt="Team with mentor holding prototypes"
                  class="rounded-xl shadow-lg w-full object-cover" />
             <p class="text-sm text-slate-500 mt-2">A few members of our team and mentor with first prototype.</p>
           </div>
@@ -109,40 +102,35 @@
         <h2 class="text-3xl font-bold text-center mb-8">Innovative Features</h2>
         <div class="grid md:grid-cols-3 gap-6">
           <article class="card bg-white border rounded-xl p-6">
-            <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=70" alt="Bioplastic granules" class="rounded mb-4 h-44 w-full object-cover">
+            <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=70" class="rounded mb-4 h-44 w-full object-cover" alt="Bioplastic granules">
             <h3 class="font-semibold text-lg">100% Biodegradable Body</h3>
-            <p>Proprietary plant-based blend (PLA + bamboo fiber) designed for durability during use and decomposition in compost.</p>
+            <p>Proprietary plant-based blend (PLA + bamboo fiber) for durability during use and breakdown in compost.</p>
           </article>
           <article class="card bg-white border rounded-xl p-6">
-            <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800&q=70" alt="Seeds sprouting" class="rounded mb-4 h-44 w-full object-cover">
+            <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800&q=70" class="rounded mb-4 h-44 w-full object-cover" alt="Seeds sprouting">
             <h3 class="font-semibold text-lg">Seed Capsule in Cap</h3>
-            <p>Non-GMO seeds enclosed for planting after use. Cap design balances moisture protection and easy opening.</p>
+            <p>Non-GMO seeds enclosed for planting after use. Cap balances moisture protection and easy opening.</p>
           </article>
           <article class="card bg-white border rounded-xl p-6">
-            <!-- Smooth ink image (your file) -->
-            <img src="WhatsApp Image 2025-09-17 at 19.51.26.jpeg" alt="Smooth handwriting" class="rounded mb-4 h-44 w-full object-cover">
+            <img src="Screenshot 2025-09-19 at 7.58.24 PM.png" class="rounded mb-4 h-44 w-full object-cover" alt="Ink close-up">
             <h3 class="font-semibold text-lg">Smooth, Safe Ink</h3>
             <p>Vegetable-based pigments tuned for flow and stability. Writing performance comparable to regular ballpoints.</p>
           </article>
         </div>
 
-       <div class="mt-10 text-center">
-  <h3 class="text-2xl font-bold">Scan & Learn More</h3>
-  <p class="text-slate-600 mb-4">Video demonstration of prototype in action.</p>
-  
-  <!-- Your demo video -->
-  <video src="SproutScribe Video.mp4" controls class="mx-auto rounded-xl shadow w-full max-w-lg mb-6"></video>
-  
-  <!-- Embedded YouTube video -->
-  <div class="iframe-wrap">
-    <iframe width="560" height="315" 
-      src="https://www.youtube.com/embed/1rkl5GZ_vL4" 
-      title="YouTube video player" 
-      frameborder="0" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-      allowfullscreen></iframe>
-  </div>
-</div>
+        <div class="mt-10 text-center">
+          <h3 class="text-2xl font-bold">Scan & Learn More</h3>
+          <p class="text-slate-600 mb-4">Video demonstration of prototype in action.</p>
+          <div class="iframe-wrap">
+            <iframe width="560" height="315"
+              src="https://www.youtube.com/embed/1rkl5GZ_vL4"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- SCIENCE -->
     <section id="science" class="page">
@@ -175,7 +163,6 @@
               <li>Seed germination: <strong>78%</strong> from cap-embedded seeds</li>
               <li>Writing performance comparable to conventional pens</li>
             </ul>
-            <!-- Link to YOUR PDF -->
             <a class="inline-block mt-5 bg-[--brand] text-white px-5 py-3 rounded-lg"
                href="Eco_Friendly_Pen_Ink_Research_Expanded.pdf" download>Download Full Research Paper</a>
           </div>
@@ -183,7 +170,7 @@
       </div>
     </section>
 
-    <!-- SURVEY DATA (charts) -->
+    <!-- SURVEY DATA -->
     <section id="survey-data" class="page">
       <div class="py-10">
         <h2 class="text-3xl font-bold text-center mb-8">Survey Data (n ≈ 94)</h2>
@@ -208,7 +195,7 @@
             <h3 class="font-semibold text-center mb-2">How big an issue is global warming?</h3>
             <canvas id="chartWarming"></canvas>
           </div>
-          <div class="bg-white border rounded-xl p-6 lg:col-span-1">
+          <div class="bg-white border rounded-xl p-6">
             <h3 class="font-semibold text-center mb-2">Modifications you’d like to see</h3>
             <canvas id="chartMods"></canvas>
             <p class="text-sm text-slate-600 mt-3">Top picks: Educational QR code & Seed capsule in pen.</p>
@@ -252,13 +239,14 @@
       </div>
     </section>
 
-    <!-- LIVE SURVEY (Google Form embed) -->
+    <!-- SURVEY (LIVE FORM) -->
     <section id="survey" class="page">
       <div class="py-10">
         <h2 class="text-3xl font-bold text-center mb-6">Take the Survey</h2>
         <p class="text-center text-slate-600 mb-6">Embedded Google Form (updates live).</p>
         <div class="iframe-wrap">
-          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc2yqJNTXap7mb_ZVH6d_M9Bz8pNkYDU8lKY9k6FTzqmfPfpw/viewform?embedded=true" width="640" height="2511" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc2yqJNTXap7mb_ZVH6d_M9Bz8pNkYDU8lKY9k6FTzqmfPfpw/viewform?embedded=true"
+                  height="1900" loading="lazy">Loading…</iframe>
         </div>
       </div>
     </section>
@@ -273,6 +261,10 @@
             <figcaption class="font-semibold">Shravan Muralidharan</figcaption>
           </figure>
           <figure class="bg-white border rounded-xl p-5 text-center card">
+            <img src="WhatsApp Image 2025-09-17 at 19.51.26.jpeg" alt="Srivastava Rhishabh" class="mx-auto rounded-xl h-56 w-full object-cover mb-3">
+            <figcaption class="font-semibold">Srivastava Rhishabh</figcaption>
+          </figure>
+          <figure class="bg-white border rounded-xl p-5 text-center card">
             <img src="WhatsApp Image 2025-09-16 at 19.04.39.jpeg" alt="Advay Kuldeep Joshi" class="mx-auto rounded-xl h-56 w-full object-cover mb-3">
             <figcaption class="font-semibold">Advay Kuldeep Joshi</figcaption>
           </figure>
@@ -280,16 +272,12 @@
             <img src="WhatsApp Image 2025-09-17 at 20.54.29.jpeg" alt="Shaurya Jain" class="mx-auto rounded-xl h-56 w-full object-cover mb-3">
             <figcaption class="font-semibold">Shaurya Jain</figcaption>
           </figure>
-          <figure class="bg-white border rounded-xl p-5 text-center card">
-            <img src="WhatsApp Image 2025-09-17 at 19.51.26.jpeg" alt="Srivastava Rhishabh" class="mx-auto rounded-xl h-56 w-full object-cover mb-3">
-            <figcaption class="font-semibold">Srivastava Rhishabh</figcaption>
-          </figure>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer class="border-t border-slate-200 mt-10">
     <div class="max-w-7xl mx-auto px-4 py-8 text-center text-sm text-slate-600">
       &copy; <span id="year"></span> SproutScribe Research Project · stories today, a greener tomorrow
@@ -297,45 +285,35 @@
   </footer>
 
   <script>
-    // Mobile nav toggle
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileNav = document.getElementById('mobileNav');
-    menuBtn?.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
+    // Mobile nav
+    const menuBtn=document.getElementById('menuBtn');
+    const mobileNav=document.getElementById('mobileNav');
+    menuBtn?.addEventListener('click',()=>mobileNav.classList.toggle('hidden'));
 
-    // Hash router for tab-like pages
-    const pages = Array.from(document.querySelectorAll('.page'));
-    const navLinks = Array.from(document.querySelectorAll('.nav-link'));
-    function activate(hash){
-      const id = hash || '#about';
+    // Tabs
+    const pages=[...document.querySelectorAll('.page')];
+    const links=[...document.querySelectorAll('.nav-link')];
+    function show(id){
+      const hash=id||'#about';
       pages.forEach(p=>p.classList.remove('active'));
-      const el = document.querySelector(id);
+      const el=document.querySelector(hash);
       if(el) el.classList.add('active');
-      navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href')===id));
+      links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')===hash));
       mobileNav?.classList.add('hidden');
     }
-    window.addEventListener('hashchange',()=>activate(location.hash));
-    activate(location.hash||'#about');
+    window.addEventListener('hashchange',()=>show(location.hash));
+    show(location.hash||'#about'); // default
 
-    // Charts (based on your screenshots)
-    const needCtx=document.getElementById('chartNeed');
-    if(needCtx) new Chart(needCtx,{type:'doughnut',data:{labels:['Yes','Maybe','No'],datasets:[{data:[61,26,7],backgroundColor:['#16a34a','#3b82f6','#ef4444']}]}});
+    // Charts (values from your screenshots)
+    function mk(id, cfg){const c=document.getElementById(id); if(c){new Chart(c,cfg)}}
+    mk('chartNeed',{type:'doughnut',data:{labels:['Yes','Maybe','No'],datasets:[{data:[61,26,7],backgroundColor:['#16a34a','#3b82f6','#ef4444']}]}});
+    mk('chartAfter',{type:'pie',data:{labels:['Throw away','Replace ink cartridge'],datasets:[{data:[77,17],backgroundColor:['#16a34a','#3b82f6']}]}});
+    mk('chartFrequency',{type:'bar',data:{labels:['1','2','3','4','5'],datasets:[{label:'Responses',data:[1,10,2,21,60],backgroundColor:'#16a34a'}]},options:{scales:{y:{beginAtZero:true}}}});
+    mk('chartPollution',{type:'bar',data:{labels:['1','2','3','4','5'],datasets:[{label:'Responses',data:[0,3,4,30,57],backgroundColor:'#3b82f6'}]},options:{scales:{y:{beginAtZero:true}}}});
+    mk('chartWarming',{type:'bar',data:{labels:['1','2','3','4','5'],datasets:[{label:'Responses',data:[0,3,5,30,56],backgroundColor:'#f59e0b'}]},options:{scales:{y:{beginAtZero:true}}}});
+    mk('chartMods',{type:'bar',data:{labels:['Educational QR code','Seed capsule inside pen','Pen clip','Cap'],datasets:[{label:'Votes',data:[73,51,2,2],backgroundColor:'#16a34a'}]},options:{indexAxis:'y',scales:{x:{beginAtZero:true}}}});
 
-    const afterCtx=document.getElementById('chartAfter');
-    if(afterCtx) new Chart(afterCtx,{type:'pie',data:{labels:['Throw away','Replace ink cartridge'],datasets:[{data:[77,17],backgroundColor:['#16a34a','#3b82f6']}]}});
-
-    const freqCtx=document.getElementById('chartFrequency');
-    if(freqCtx) new Chart(freqCtx,{type:'bar',data:{labels:['1','2','3','4','5'],datasets:[{label:'Responses',data:[1,10,2,21,60],backgroundColor:'#16a34a'}]},options:{scales:{y:{beginAtZero:true}}}});
-
-    const polCtx=document.getElementById('chartPollution');
-    if(polCtx) new Chart(polCtx,{type:'bar',data:{labels:['1','2','3','4','5'],datasets:[{label:'Responses',data:[0,3,4,30,57],backgroundColor:'#3b82f6'}]},options:{scales:{y:{beginAtZero:true}}}});
-
-    const warmCtx=document.getElementById('chartWarming');
-    if(warmCtx) new Chart(warmCtx,{type:'bar',data:{labels:['1','2','3','4','5'],datasets:[{label:'Responses',data:[0,3,5,30,56],backgroundColor:'#f59e0b'}]},options:{scales:{y:{beginAtZero:true}}}});
-
-    const modsCtx=document.getElementById('chartMods');
-    if(modsCtx) new Chart(modsCtx,{type:'bar',data:{labels:['Educational QR code','Seed capsule inside pen','Pen clip','Cap'],datasets:[{label:'Votes',data:[73,51,2,2],backgroundColor:'#16a34a'}]},options:{indexAxis:'y',scales:{x:{beginAtZero:true}}}});
-
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('year').textContent=new Date().getFullYear();
   </script>
 </body>
 </html>
