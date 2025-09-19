@@ -10,7 +10,6 @@
   <style>
     :root { --brand:#16a34a; }
     html { scroll-behavior:smooth; }
-    /* Tabbed pages */
     .page{display:none;opacity:0;transform:translateY(8px);transition:opacity .25s,transform .25s}
     .page.active{display:block;opacity:1;transform:translateY(0)}
     .nav-link{padding:.5rem .9rem;border-radius:9999px}
@@ -164,9 +163,7 @@
               <li>Writing performance comparable to conventional pens</li>
             </ul>
             <a class="inline-block mt-5 bg-[--brand] text-white px-5 py-3 rounded-lg"
-   href="Eco_Friendly_Pen_Ink_Research_Expanded.docx" download>
-   Download Full Research Paper
-</a>
+               href="Eco_Friendly_Pen_Ink_Research_Expanded.docx" download>Download Full Research Paper</a>
           </div>
         </div>
       </div>
@@ -202,17 +199,6 @@
             <canvas id="chartMods"></canvas>
             <p class="text-sm text-slate-600 mt-3">Top picks: Educational QR code & Seed capsule in pen.</p>
           </div>
-          <div class="bg-white border rounded-xl p-6 lg:col-span-2">
-            <h3 class="font-semibold mb-2">Open-ended suggestions (highlights)</h3>
-            <ul class="list-disc pl-5 grid sm:grid-cols-2 gap-y-1">
-              <li>Educational QR code</li>
-              <li>Seed capsule inside pen</li>
-              <li>Pen clip / better grip</li>
-              <li>Replaceable parts</li>
-              <li>Use fully recyclable materials</li>
-              <li>Cost competitiveness with normal pens</li>
-            </ul>
-          </div>
         </div>
       </div>
     </section>
@@ -236,12 +222,11 @@
           <details class="bg-white border rounded-xl p-5"><summary class="font-semibold">Would this cost more than a normal pen?</summary><p>Materials can be slightly higher, but in bulk and with refills the total cost approaches regular pens.</p></details>
           <details class="bg-white border rounded-xl p-5"><summary class="font-semibold">What’s the point of the seed in the pen?</summary><p>It turns disposal into learning: plant the cap, track germination, and reflect on circular design.</p></details>
           <details class="bg-white border rounded-xl p-5"><summary class="font-semibold">Why buy this if a normal pen is cheaper?</summary><p>Lower plastic waste, safer inks, educational value, and a positive end-of-life story.</p></details>
-          <details class="bg-white border rounded-xl p-5 md:col-span-2"><summary class="font-semibold">“Look at overall writing solution so we can save paper… digital transfer?”</summary><p>We agree. Alongside SproutScribe we’re exploring QR-linked resources, recycled notebooks, and smarter note-taking to reduce paper use.</p></details>
         </div>
       </div>
     </section>
 
-    <!-- SURVEY (LIVE FORM) -->
+    <!-- SURVEY -->
     <section id="survey" class="page">
       <div class="py-10">
         <h2 class="text-3xl font-bold text-center mb-6">Take the Survey</h2>
@@ -263,12 +248,12 @@
             <figcaption class="font-semibold">Shravan Muralidharan</figcaption>
           </figure>
           <figure class="bg-white border rounded-xl p-5 text-center card">
-            <img src="WhatsApp Image 2025-09-17 at 19.51.26.jpeg" alt="Srivastava Rhishabh" class="mx-auto rounded-xl h-56 w-full object-cover mb-3">
-            <figcaption class="font-semibold">Srivastava Rhishabh</figcaption>
-          </figure>
-          <figure class="bg-white border rounded-xl p-5 text-center card">
             <img src="WhatsApp Image 2025-09-16 at 19.04.39.jpeg" alt="Advay Kuldeep Joshi" class="mx-auto rounded-xl h-56 w-full object-cover mb-3">
             <figcaption class="font-semibold">Advay Kuldeep Joshi</figcaption>
+          </figure>
+          <figure class="bg-white border rounded-xl p-5 text-center card">
+            <img src="WhatsApp Image 2025-09-17 at 19.51.26.jpeg" alt="Srivastava Rhishabh" class="mx-auto rounded-xl h-56 w-full object-cover mb-3">
+            <figcaption class="font-semibold">Srivastava Rhishabh</figcaption>
           </figure>
           <figure class="bg-white border rounded-xl p-5 text-center card">
             <img src="WhatsApp Image 2025-09-17 at 20.54.29.jpeg" alt="Shaurya Jain" class="mx-auto rounded-xl h-56 w-full object-cover mb-3">
@@ -304,9 +289,9 @@
       mobileNav?.classList.add('hidden');
     }
     window.addEventListener('hashchange',()=>show(location.hash));
-    show(location.hash||'#about'); // default
+    show(location.hash||'#about');
 
-    // Charts (values from your screenshots)
+    // Charts
     function mk(id, cfg){const c=document.getElementById(id); if(c){new Chart(c,cfg)}}
     mk('chartNeed',{type:'doughnut',data:{labels:['Yes','Maybe','No'],datasets:[{data:[61,26,7],backgroundColor:['#16a34a','#3b82f6','#ef4444']}]}});
     mk('chartAfter',{type:'pie',data:{labels:['Throw away','Replace ink cartridge'],datasets:[{data:[77,17],backgroundColor:['#16a34a','#3b82f6']}]}});
