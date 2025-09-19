@@ -116,20 +116,35 @@
             <p>Vegetable-based pigments tuned for flow and stability. Writing performance comparable to regular ballpoints.</p>
           </article>
         </div>
-
-         <div class="mt-10 text-center">
+<div class="mt-10 text-center">
       <h3 class="text-2xl font-bold">Scan & Learn More</h3>
       <p class="text-slate-600 mb-4">Video demonstration of prototype in action.</p>
-      <div class="iframe-wrap">
-        <iframe width="560" height="315"
-          src="https://www.youtube.com/embed/cYpL9MYYcy8"
-          title="YouTube video player" frameborder="0"
+
+      <!-- Privacy-enhanced YouTube embed -->
+      <div class="iframe-wrap mb-4">
+        <iframe
+          width="560" height="315"
+          src="https://www.youtube-nocookie.com/embed/cYpL9MYYcy8"
+          title="YouTube video player"
+          frameborder="0"
+          referrerpolicy="strict-origin-when-cross-origin"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen></iframe>
-          </div>
-        </div>
+          allowfullscreen>
+        </iframe>
       </div>
-    </section>
+
+      <!-- Fallback (if embed is blocked): clickable thumbnail + button -->
+      <div class="max-w-2xl mx-auto">
+        <a href="https://www.youtube.com/watch?v=cYpL9MYYcy8" target="_blank" rel="noopener"
+           class="group block rounded-xl overflow-hidden shadow hover:shadow-lg transition">
+          <img src="https://img.youtube.com/vi/cYpL9MYYcy8/hqdefault.jpg" alt="Watch on YouTube"
+               class="w-full object-cover">
+          <div class="bg-white px-5 py-4 text-[--brand] font-semibold group-hover:underline">Open on YouTube</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- SCIENCE -->
     <section id="science" class="page">
