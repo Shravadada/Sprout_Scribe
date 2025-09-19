@@ -42,6 +42,7 @@
       </nav>
       <button id="menuBtn" class="md:hidden px-3 py-2 border rounded-lg">Menu</button>
     </div>
+    <!-- Mobile nav -->
     <nav id="mobileNav" class="hidden md:hidden border-t border-slate-200">
       <ul class="px-4 py-3 grid gap-2">
         <li><a class="nav-link" href="#about">About</a></li>
@@ -73,7 +74,8 @@
           </div>
         </div>
         <div class="relative">
-          <img src="WhatsApp%20Image%202025-05-16%20at%2018.36.00%20(1).jpeg" 
+          <!-- Hero sketch (your file) -->
+          <img src="WhatsApp Image 2025-05-16 at 18.36.00 (1).jpeg" 
                alt="SproutScribe sketch" 
                class="rounded-xl shadow-xl w-full object-cover" />
         </div>
@@ -91,6 +93,7 @@
             <p class="text-emerald-700 font-semibold">Tagline: “stories today, a greener tomorrow.”</p>
           </div>
           <div>
+            <!-- Group/mentor photo (your file) -->
             <img src="WhatsApp Image 2025-09-17 at 16.00.23.jpeg" 
                  alt="Team with mentor holding prototypes"
                  class="rounded-xl shadow-lg w-full object-cover" />
@@ -116,6 +119,7 @@
             <p>Non-GMO seeds enclosed for planting after use. Cap design balances moisture protection and easy opening.</p>
           </article>
           <article class="card bg-white border rounded-xl p-6">
+            <!-- Smooth ink image (your file) -->
             <img src="WhatsApp Image 2025-09-17 at 19.51.26.jpeg" alt="Smooth handwriting" class="rounded mb-4 h-44 w-full object-cover">
             <h3 class="font-semibold text-lg">Smooth, Safe Ink</h3>
             <p>Vegetable-based pigments tuned for flow and stability. Writing performance comparable to regular ballpoints.</p>
@@ -125,6 +129,7 @@
         <div class="mt-10 text-center">
           <h3 class="text-2xl font-bold">Scan & Learn More</h3>
           <p class="text-slate-600 mb-4">Video demonstration of prototype in action.</p>
+          <!-- Your demo video -->
           <video src="SproutScribe Video.mp4" controls class="mx-auto rounded-xl shadow w-full max-w-lg"></video>
         </div>
       </div>
@@ -137,16 +142,31 @@
         <div class="grid lg:grid-cols-2 gap-8">
           <div class="bg-white border rounded-xl p-6">
             <h3 class="text-xl font-semibold text-emerald-700 mb-2">Materials Research</h3>
-            <p>We evaluated biodegradable polymers and natural fibers... Best candidate: <strong>PLA</strong> reinforced with <strong>bamboo fibers</strong>.</p>
+            <p>We evaluated biodegradable polymers and natural fibers to achieve a body that resists classroom wear but breaks down in compost. Best candidate: <strong>PLA</strong> reinforced with <strong>bamboo fibers</strong>.</p>
+            <div class="mt-4 space-y-3">
+              <div>
+                <div class="flex justify-between text-sm"><span>0–2 months</span><span>15% degraded</span></div>
+                <div class="h-2 bg-slate-200 rounded"><div class="h-2 bg-emerald-500 rounded" style="width:15%"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between text-sm"><span>2–4 months</span><span>60% degraded</span></div>
+                <div class="h-2 bg-slate-200 rounded"><div class="h-2 bg-emerald-600 rounded" style="width:60%"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between text-sm"><span>4–6 months</span><span>92% degraded</span></div>
+                <div class="h-2 bg-slate-200 rounded"><div class="h-2 bg-emerald-700 rounded" style="width:92%"></div></div>
+              </div>
+            </div>
           </div>
           <div class="bg-white border rounded-xl p-6">
             <h3 class="text-xl font-semibold text-emerald-700 mb-2">Testing Methodology</h3>
-            <p>Decomposition tested under three conditions... Optimal breakdown occurs in compost.</p>
+            <p>Decomposition tested under three conditions: industrial compost, home compost, and landfill-like environments. Optimal breakdown occurs in compost.</p>
             <ul class="list-disc pl-5 space-y-1">
               <li>No toxic residues detected post-decomposition</li>
-              <li>Seed germination: <strong>78%</strong></li>
+              <li>Seed germination: <strong>78%</strong> from cap-embedded seeds</li>
               <li>Writing performance comparable to conventional pens</li>
             </ul>
+            <!-- Link to YOUR PDF -->
             <a class="inline-block mt-5 bg-[--brand] text-white px-5 py-3 rounded-lg"
                href="Eco_Friendly_Pen_Ink_Research_Expanded.pdf" download>Download Full Research Paper</a>
           </div>
@@ -154,7 +174,76 @@
       </div>
     </section>
 
-    <!-- SURVEY -->
+    <!-- SURVEY DATA (charts) -->
+    <section id="survey-data" class="page">
+      <div class="py-10">
+        <h2 class="text-3xl font-bold text-center mb-8">Survey Data (n ≈ 94)</h2>
+        <div class="grid lg:grid-cols-2 gap-8">
+          <div class="bg-white border rounded-xl p-6">
+            <h3 class="font-semibold text-center mb-2">Do we need a biodegradable pen?</h3>
+            <canvas id="chartNeed"></canvas>
+          </div>
+          <div class="bg-white border rounded-xl p-6">
+            <h3 class="font-semibold text-center mb-2">What do you do after your pen has “died”?</h3>
+            <canvas id="chartAfter"></canvas>
+          </div>
+          <div class="bg-white border rounded-xl p-6">
+            <h3 class="font-semibold text-center mb-2">How often do you use a pen daily?</h3>
+            <canvas id="chartFrequency"></canvas>
+          </div>
+          <div class="bg-white border rounded-xl p-6">
+            <h3 class="font-semibold text-center mb-2">How big an issue is pollution?</h3>
+            <canvas id="chartPollution"></canvas>
+          </div>
+          <div class="bg-white border rounded-xl p-6">
+            <h3 class="font-semibold text-center mb-2">How big an issue is global warming?</h3>
+            <canvas id="chartWarming"></canvas>
+          </div>
+          <div class="bg-white border rounded-xl p-6 lg:col-span-1">
+            <h3 class="font-semibold text-center mb-2">Modifications you’d like to see</h3>
+            <canvas id="chartMods"></canvas>
+            <p class="text-sm text-slate-600 mt-3">Top picks: Educational QR code & Seed capsule in pen.</p>
+          </div>
+          <div class="bg-white border rounded-xl p-6 lg:col-span-2">
+            <h3 class="font-semibold mb-2">Open-ended suggestions (highlights)</h3>
+            <ul class="list-disc pl-5 grid sm:grid-cols-2 gap-y-1">
+              <li>Educational QR code</li>
+              <li>Seed capsule inside pen</li>
+              <li>Pen clip / better grip</li>
+              <li>Replaceable parts</li>
+              <li>Use fully recyclable materials</li>
+              <li>Cost competitiveness with normal pens</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="page">
+      <div class="py-10">
+        <h2 class="text-3xl font-bold text-center mb-8">FAQ</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <details class="bg-white border rounded-xl p-5" open>
+            <summary class="font-semibold">Any questions?</summary>
+            <p>Yes — we compiled every question received and answered them below.</p>
+          </details>
+          <details class="bg-white border rounded-xl p-5"><summary class="font-semibold">NA / nil?</summary><p>When responses said “NA” or “nil”, we treated them as no question.</p></details>
+          <details class="bg-white border rounded-xl p-5"><summary class="font-semibold">How to open/close pen?</summary><p>Prototype A uses a twist; Prototype B uses a click top. Both avoid metal springs to keep parts compostable.</p></details>
+          <details class="bg-white border rounded-xl p-5"><summary class="font-semibold">Where’s the cap?</summary><p>The cap doubles as a seed capsule. It’s moisture-protected but easy to open for planting.</p></details>
+          <details class="bg-white border rounded-xl p-5"><summary class="font-semibold">How much will it cost?</summary><p>Target: similar to mid-range school pens. Bulk school packs and refills keep costs competitive.</p></details>
+          <details class="bg-white border rounded-xl p-5"><summary class="font-semibold">How long will the pen last?</summary><p>Comparable to a standard ballpoint in normal use. Biodegradation starts in composting conditions, not in your pencil case.</p></details>
+          <details class="bg-white border rounded-xl p-5"><summary class="font-semibold">Where’s the grip?</summary><p>A textured bamboo-fiber sleeve provides grip without synthetic rubber. We’re testing shapes for comfort.</p></details>
+          <details class="bg-white border rounded-xl p-5"><summary class="font-semibold">What if I don’t want the seed?</summary><p>Opt for the seed-free cap or gift the seed to a friend/community garden.</p></details>
+          <details class="bg-white border rounded-xl p-5"><summary class="font-semibold">Would this cost more than a normal pen?</summary><p>Materials can be slightly higher, but in bulk and with refills the total cost approaches regular pens.</p></details>
+          <details class="bg-white border rounded-xl p-5"><summary class="font-semibold">What’s the point of the seed in the pen?</summary><p>It turns disposal into learning: plant the cap, track germination, and reflect on circular design.</p></details>
+          <details class="bg-white border rounded-xl p-5"><summary class="font-semibold">Why buy this if a normal pen is cheaper?</summary><p>Lower plastic waste, safer inks, educational value, and a positive end-of-life story.</p></details>
+          <details class="bg-white border rounded-xl p-5 md:col-span-2"><summary class="font-semibold">“Look at overall writing solution so we can save paper… digital transfer?”</summary><p>We agree. Alongside SproutScribe we’re exploring QR-linked resources, recycled notebooks, and smarter note-taking to reduce paper use.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIVE SURVEY (Google Form embed) -->
     <section id="survey" class="page">
       <div class="py-10">
         <h2 class="text-3xl font-bold text-center mb-6">Take the Survey</h2>
@@ -204,18 +293,21 @@
     const mobileNav = document.getElementById('mobileNav');
     menuBtn?.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
 
-    // Router
+    // Hash router for tab-like pages
     const pages = Array.from(document.querySelectorAll('.page'));
-    function activate(hash){ const id = hash || '#about';
+    const navLinks = Array.from(document.querySelectorAll('.nav-link'));
+    function activate(hash){
+      const id = hash || '#about';
       pages.forEach(p=>p.classList.remove('active'));
       const el = document.querySelector(id);
       if(el) el.classList.add('active');
-      document.querySelectorAll('.nav-link').forEach(a => a.classList.toggle('active', a.getAttribute('href')===id));
+      navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href')===id));
+      mobileNav?.classList.add('hidden');
     }
     window.addEventListener('hashchange',()=>activate(location.hash));
     activate(location.hash||'#about');
 
-    // Charts
+    // Charts (based on your screenshots)
     const needCtx=document.getElementById('chartNeed');
     if(needCtx) new Chart(needCtx,{type:'doughnut',data:{labels:['Yes','Maybe','No'],datasets:[{data:[61,26,7],backgroundColor:['#16a34a','#3b82f6','#ef4444']}]}});
 
@@ -233,8 +325,7 @@
 
     const modsCtx=document.getElementById('chartMods');
     if(modsCtx) new Chart(modsCtx,{type:'bar',data:{labels:['Educational QR code','Seed capsule inside pen','Pen clip','Cap'],datasets:[{label:'Votes',data:[73,51,2,2],backgroundColor:'#16a34a'}]},options:{indexAxis:'y',scales:{x:{beginAtZero:true}}}});
-    
-    // Footer year
+
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
